@@ -1,0 +1,158 @@
+/* Container for profile */
+.profile__container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 2% 0 0 0;
+
+}
+
+.profile__title__card {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
+}
+.profile__title__card > img {
+     width: 85px;
+     height: 85px;
+}
+.profile__title__info {
+     width: 100%;
+     display: flex;
+     align-items: start;
+     justify-content: center;
+     flex-direction: column;
+     text-align: start;
+}
+.profile__title__info> p {
+     font-size: 21px;
+     color: #222222;
+}
+.profile__title__info__active {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 15px;
+}
+.profile__title__info__active__txt {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     
+}
+.profile__title__info__active__txt p {
+     color: gray;
+}
+.profile__title__info__active__txt span {
+     color: #222222;
+     font-size: 19px;
+}
+
+
+
+
+.profile-active-progress {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+     flex-wrap: wrap;
+     margin-top: 8%;
+}
+
+.profile-active-progress>button {
+     width: 159px;
+     height: 65px;
+     border: solid 3px #aa3fec;
+     border-radius: 23px;
+     display: flex;
+     align-items: start;
+     justify-content: center;
+     padding: 2%;
+     position: relative;
+box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;}
+
+
+.profile-active-progress-title {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+}
+
+.profile-active-progress-title>p {
+     color: gray;
+     font-size: 17px;
+     margin-right: -6px;
+}
+
+.profile-active-progress>button>img {
+     width: 20px;
+     height: 20px;
+     position: absolute;
+     top: 5px;
+     left: 5px;
+}
+
+.hint-modal {
+     position: absolute;
+     top: 70px;
+     left: 50%;
+     transform: translateX(-50%);
+     padding: 10px;
+     background-color: white;
+     border: 1px solid #ccc;
+     border-radius: 8px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     z-index: 10;
+     white-space: nowrap;
+     font-size: 14px;
+     color: #333;
+}
+.profile__active__form__card {
+     width: 350px;
+     height: 190px;
+          border: solid 3px #aa3fec;
+          border-radius: 23px;
+          padding: 3%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          flex-direction: column;
+          margin-top: 3%;
+          position: relative;
+}
+.profile__active__form__card > p {
+     color: #222222;
+     font-size: 23px;
+}
+.profile__active__form__card>span {
+     color: #222222;
+     font-size: 23px;
+     font-weight: bold;
+}
+.profile__active__form__card>button {
+     width: 169px;
+     height: 41px;
+     border: solid 3px #aa3fec;
+     border-radius: 23px;
+     background-color: white;
+     position: absolute;
+     bottom: -20px;
+     font-size: 17px;
+     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+     /* Добавлен плавный переход */
+}
+
+.profile__active__form__card>button:hover {
+     background-color: #f6e7ff;
+     /* Изменен цвет фона при наведении */
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     /* Добавлена легкая тень при наведении */
+}

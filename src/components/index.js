@@ -1,0 +1,5 @@
+export { default as Footer } from "../components/footer/Footer"
+export { default as Search } from "../components/search/Search"
+export { default as HistoryNotFound } from "../components/history/History-notfound"
+export { default as History } from "../components/history/History"
+export { default as Profile } from "../components/profile/Profile"

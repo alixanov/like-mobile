@@ -1,0 +1,99 @@
+.notfound-container {
+     height: 90vh;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
+     margin-top: 20px;
+}
+
+/* Heading style */
+.notfound-heading {
+     font-size: 20px;
+     font-weight: 600;
+     margin-bottom: 5px;
+     word-wrap: break-word;
+}
+
+/* Dolphin image style */
+.notfound-dolphin {
+     width: 120px;
+     height: 120px;
+     margin: 24px auto;
+}
+
+/* Subheading style */
+.notfound-subheading {
+     text-align: center;
+     color: #666;
+}
+
+/* Other styles for history component */
+.history-container {
+     height: 90vh;
+     display: flex;
+     flex-direction: column;
+     padding: 20px;
+     text-align: center;
+     box-sizing: border-box;
+}
+
+.history-heading {
+     font-size: 20px;
+     font-weight: 500;
+     margin-bottom: 20px;
+     word-wrap: break-word;
+}
+
+.history-list {
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+}
+
+.history-item {
+     padding: 12px;
+     border: 1px solid #eee;
+     border-radius: 8px;
+     background: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.history-item-title {
+     font-weight: 500;
+     text-align: left;
+     margin: 0;
+     word-wrap: break-word;
+     font-size: 20px;
+}
+
+.history-item-date {
+     font-size: 12px;
+     color: #666;
+     margin: 0;
+     text-align: left;
+}
+
+.history-item-description {
+     font-size: 10px;
+     margin-top: 15%;
+     margin-left: 7%;
+}
+
+.history-person-image {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+}
+
+.history-item-info {
+     display: grid;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+     .history-container {
+          padding: 16px;
+     }
+}

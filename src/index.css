@@ -1,0 +1,38 @@
+@font-face {
+  src: url(./fonts/Jost-Medium.ttf);
+  font-family: "Jost-Medium";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  
+}
+
+#root {
+  max-width: 390px;
+  width: 100vw;
+  font-family: "Jost-Medium",sans-serif;
+}
+.main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-inline: 10px;
+}
+.root__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

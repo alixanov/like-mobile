@@ -1,0 +1,66 @@
+/* Base styles */
+.search-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 90vh;
+     flex-direction: column;
+     text-align: center;
+}
+
+.search__title {
+     display: flex;
+     align-items: start;
+     flex-direction: column;
+}
+
+/* Heading styles */
+.search-heading {
+     text-align: center;
+     color: black;
+     font-weight: 500;
+     word-wrap: break-word;
+     font-size: 25px;
+}
+
+/* Subheading styles */
+.search-subheading {
+     text-align: center;
+     color: black;
+     font-weight: 400;
+     word-wrap: break-word;
+     font-size: 14px;
+}
+
+/* Input styles */
+.search__input {
+     margin: 10px 0;
+     padding: 10px;
+     width: 100%;
+     max-width: 400px;
+     box-sizing: border-box;
+     border: none;
+     border-bottom: 3px solid #aa3fec;
+     outline: none;
+}
+
+.search-button {
+     width: 100%;
+     max-width: 301px;
+     height: 52px;
+     background-color: #aa3fec;
+     border-radius: 30px;
+     margin-top: 20px;
+     cursor: pointer;
+     border: 0;
+     color: white;
+     font-size: 15px;
+     font-weight: 500;
+     transition: background-color 0.3s ease;
+     /* Добавлен плавный переход */
+}
+
+.search-button:hover {
+     background-color: #8f33d6;
+     /* Изменен цвет фона при наведении */
+}

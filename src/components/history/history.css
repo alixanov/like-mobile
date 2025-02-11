@@ -1,0 +1,75 @@
+
+.history-container {
+     width: 100%;
+
+}
+.history-heading {
+     font-size: 20px;
+     font-weight: 500;
+     margin-bottom: 20px;
+     word-wrap: break-word;
+}
+
+/* History list styles */
+.history-list {
+     display: flex;
+     flex-direction: column;
+     gap: 12px;
+}
+
+/* History item styles */
+.history-item {
+     /* padding: 12px; */
+     border: 1px solid #eee;
+     border-radius: 8px;
+     background: white;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 5px;
+}
+
+/* Item title styles */
+.history-item-title {
+     font-weight: 500;
+     text-align: left;
+     margin: 0;
+     word-wrap: break-word;
+     font-size: 16px;
+}
+
+/* Item date styles */
+.history-item-date {
+     font-size: 12px;
+     color: #666;
+     margin: 0;
+     text-align: left;
+     font-weight: 500;
+}
+
+/* Item description styles */
+.history-item-description {
+     font-size: 10px;
+     margin-top: 15%;
+     margin-left: 7%;
+     color: gray;
+}
+
+/* Person image styles */
+.history-person-image {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+}
+
+/* Info container styles */
+.history-item-info {
+     display: grid;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+     .history-container {
+          padding: 16px;
+     }
+}
