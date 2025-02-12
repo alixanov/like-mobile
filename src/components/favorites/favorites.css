@@ -10,7 +10,7 @@
 .heart__card {
      position: relative;
      width: 100%;
-     max-width: 500px;
+     max-width: 350px;
 }
 
 .image-container {
@@ -94,8 +94,7 @@
      }
 
      .image-container {
-          /* max-height: 560px; */
-     }
+     max-width: 390px;     }
 }
 
 @media (max-width: 376px) {
