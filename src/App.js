@@ -23,7 +23,7 @@ const App = () => {
       <div className='main'>
         <Routes>
           {/* 📌 Основные страницы */}
-          <Route path='/reactjs-js-template' element={<Search />} />
+          <Route path='/' element={<Search />} />
           <Route path='/history' element={<History />} />
           <Route path='/history-not-found' element={<HistoryNotFound />} />
           <Route path='/profile' element={<Profile />} />  {/* ❗️ Footer остается видимым */}

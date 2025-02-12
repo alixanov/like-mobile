@@ -15,7 +15,7 @@ const navItems = [
      {
           activeIcon: searchIconActive,
           inactiveIcon: searchIcon,
-          path: '/reactjs-js-template/',
+          path: '/',
      },
      {
           activeIcon: historyActive,
