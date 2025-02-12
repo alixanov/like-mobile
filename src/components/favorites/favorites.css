@@ -1,4 +1,3 @@
-
 .heart__container {
      display: flex;
      align-items: center;
@@ -7,9 +6,39 @@
      padding-bottom: 30%;
      margin-top: -15px;
 }
+
+.heart__card {
+     position: relative;
+     width: 100%;
+     max-width: 500px;
+}
+
+.image-container {
+     position: relative;
+     width: 100%;
+     border-radius: 10px;
+     overflow: hidden;
+}
+
+.image-container img {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+     transition: opacity 0.3s ease-out;
+}
+
+.fade-out {
+     opacity: 0;
+}
+
+.fade-in {
+     opacity: 1;
+}
+
 .heart__txt__sli {
      position: relative;
 }
+
 .text_sli {
      display: flex;
      align-items: start;
@@ -18,14 +47,18 @@
      position: absolute;
      bottom: 50px;
      left: 50px;
+     transition: opacity 0.3s ease-out;
 }
+
 .text_sli>p {
      color: white;
      font-size: 27px;
      font-weight: bold;
+     margin: 0;
 }
-.text_sli  > span {
-     color:white;
+
+.text_sli>span {
+     color: white;
      font-size: 19px;
      font-weight: 100;
 }
@@ -37,29 +70,26 @@
      justify-content: center;
      gap: 200px;
      margin-top: -20px;
+     position: relative;
+     z-index: 2;
 }
 
-@keyframes fadeOut {
-     0% {
-          opacity: 1;
-          transform: translate(-50%, -50%) scale(1);
-     }
-
-     100% {
-          opacity: 0;
-          transform: translate(-50%, -50%) scale(1.3);
-     }
+.heart-icon,
+.cross-icon {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 1;
 }
 
 /* Адаптивность */
 @media (max-width: 391px) {
-     .container {
-          top: -2%;
+     .heart__card {
           max-height: 580px;
      }
 
      .btn-swip {
-          top: 80%;
           gap: 180px;
      }
 
@@ -69,21 +99,19 @@
 }
 
 @media (max-width: 376px) {
-     .container {
-          top: 5%;
+     .heart__card {
           max-height: 465px;
      }
 
      .image-container {
           width: 330px;
           max-height: 510px;
-          left: 10px;
-          top: -30px;
+          margin: 0 auto;
      }
 }
 
 @media (max-width: 361px) {
-     .container {
+     .heart__card {
           max-height: 550px;
      }
 

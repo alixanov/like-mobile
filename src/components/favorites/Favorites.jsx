@@ -19,9 +19,11 @@ const Favorites = () => {
      const [isDragging, setIsDragging] = useState(false);
      const [startPosition, setStartPosition] = useState(0);
      const [showIcon, setShowIcon] = useState(null);
+     const [isTransitioning, setIsTransitioning] = useState(false);
      const imgRef = useRef(null);
 
      const handleStart = (clientX) => {
+          if (isTransitioning) return;
           setIsDragging(true);
           setStartPosition(clientX);
           setAngle(0);
@@ -29,7 +31,7 @@ const Favorites = () => {
      };
 
      const handleMove = (clientX) => {
-          if (!isDragging) return;
+          if (!isDragging || isTransitioning) return;
           const deltaX = clientX - startPosition;
           const newAngle = Math.min(Math.max((deltaX / window.innerWidth) * 130, -130), 130);
           setAngle(newAngle);
@@ -39,14 +41,23 @@ const Favorites = () => {
           else setShowIcon(null);
      };
 
+     const handleTransition = () => {
+          setIsTransitioning(true);
+          setTimeout(() => {
+               setCurrentIndex((prevIndex) => (prevIndex + 1) % initialGirls.length);
+               setAngle(0);
+               setShowIcon(null);
+               setTimeout(() => {
+                    setIsTransitioning(false);
+               }, 300);
+          }, 300);
+     };
+
      const handleEnd = () => {
+          if (!isDragging || isTransitioning) return;
           setIsDragging(false);
           if (Math.abs(angle) > 45) {
-               setTimeout(() => {
-                    setCurrentIndex((prevIndex) => (prevIndex + 1) % initialGirls.length);
-                    setAngle(0);
-                    setShowIcon(null);
-               }, 300);
+               handleTransition();
           } else {
                setAngle(0);
                setShowIcon(null);
@@ -54,14 +65,10 @@ const Favorites = () => {
      };
 
      const handleSwipe = (direction) => {
+          if (isTransitioning) return;
           setAngle(direction === 'right' ? 70 : -70);
           setShowIcon(direction === 'right' ? 'heart' : 'cross');
-
-          setTimeout(() => {
-               setCurrentIndex((prevIndex) => (prevIndex + 1) % initialGirls.length);
-               setAngle(0);
-               setShowIcon(null);
-          }, 300);
+          handleTransition();
      };
 
      return (
@@ -76,21 +83,31 @@ const Favorites = () => {
                     onTouchMove={(e) => handleMove(e.touches[0].clientX)}
                     onTouchEnd={handleEnd}
                >
-                    <div className="image-container" style={{ transform: `rotate(${angle}deg)`, transition: isDragging ? 'none' : 'transform 0.3s ease-out' }}>
-                         <img ref={imgRef} src={initialGirls[currentIndex].img} alt={initialGirls[currentIndex].name} />
+                    <div
+                         className={`image-container ${isTransitioning ? 'transitioning' : ''}`}
+                         style={{
+                              transform: `rotate(${angle}deg)`,
+                              transition: isDragging ? 'none' : 'all 0.3s ease-out'
+                         }}
+                    >
+                         <img
+                              ref={imgRef}
+                              src={initialGirls[currentIndex].img}
+                              alt={initialGirls[currentIndex].name}
+                              className={isTransitioning ? 'fade-out' : 'fade-in'}
+                         />
 
                          {showIcon === 'heart' && <div className="heart-icon"><img src={img3} alt="heart" /></div>}
                          {showIcon === 'cross' && <div className="cross-icon"><img src={img4} alt="cross" /></div>}
 
                          <div className="heart__txt__sli">
-                              <div className="text_sli">
+                              <div className={`text_sli ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
                                    <p>{initialGirls[currentIndex].name}, {initialGirls[currentIndex].age}</p>
                                    <span>{initialGirls[currentIndex].city}</span>
                                    <span>{initialGirls[currentIndex].status}</span>
                                    <span>Рост: {initialGirls[currentIndex].height} см</span>
-                                   <span>{initialGirls[currentIndex].city}</span>
                               </div>
-                    </div>
+                         </div>
 
                          <div className="btn-swip">
                               <button className="swipe-leftt" onClick={() => handleSwipe('left')}>

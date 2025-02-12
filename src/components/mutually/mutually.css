@@ -65,12 +65,13 @@ width: 286px;
 }
 
 .mutually__profile-action {
-     width: 40px;
-          height: 40px;
+     width: 50px;
+          height: 50px;
           display: flex;
           align-items: center;
           justify-content: center;
           background-color: white;
           border-radius: 50%;
+          color: #aa3fec;
      cursor: pointer;
 }

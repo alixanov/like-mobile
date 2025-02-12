@@ -1,7 +1,10 @@
 import React from 'react';
-import plus from "../../assets/plus-icon.svg";
-import favorite from "../../assets/favorite-icon.svg";
 import blurImage from "../../assets/blur-image.png";  // Размытое изображение
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CloseIcon from '@mui/icons-material/Close';
+
+
+
 import "./mutually.css"
 const Mutually = () => {
      return (
@@ -15,8 +18,8 @@ const Mutually = () => {
                          <div key={index} className='mutually__profile'>
                               <img src={blurImage} alt='Blurred profile' className='mutually__profile-image' />
                               <div className='mutually__profile-actions'>
-                                   <img src={favorite} alt='Like' className='mutually__profile-action' />
-                                   <img src={plus} alt='Dismiss' className='mutually__profile-action' />
+                                   <FavoriteIcon  className='mutually__profile-action' />
+                                   <CloseIcon alt='Dismiss' className='mutually__profile-action' />
                               </div>
                          </div>
                     ))}
