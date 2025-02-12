@@ -3,9 +3,10 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     height: 90vh;
+     height: 70vh;
      flex-direction: column;
      text-align: center;
+     
 }
 
 .search__title {

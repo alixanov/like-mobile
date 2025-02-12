@@ -1,0 +1,152 @@
+.chat__list__container {
+     width: 100%;
+     height: 99vh;
+     background-color: white;
+     display: flex;
+     flex-direction: column;
+     position: relative;
+     /* margin-top: -50px; */
+}
+
+.chat__list__title {
+     width: 100%;
+     height: 70px;
+     background-color: white;
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     padding: 0 16px;
+     border-bottom: 1px solid #f0f0f0;
+     position: sticky;
+     top: 0;
+     z-index: 10;
+}
+
+.chat__list__title img:first-child {
+     width: 24px;
+     height: 24px;
+     cursor: pointer;
+}
+
+.chat__list__title img:nth-child(2) {
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+}
+
+.chat__list__title p {
+     font-size: 18px;
+     font-weight: 500;
+     color: #222222;
+}
+
+.chat__list__card {
+     flex: 1;
+     padding: 16px;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     overflow-y: auto;
+}
+
+.chat__list__sms__user {
+     align-self: flex-end;
+     max-width: 80%;
+}
+
+.chat__list__sms__user p {
+     background-color: #aa3fec;
+     color: white;
+     padding: 12px 16px;
+     border-radius: 16px 16px 0 16px;
+     font-size: 15px;
+     line-height: 1.4;
+     margin: 0;
+}
+
+.chat__list__sms__author {
+     align-self: flex-start;
+     max-width: 80%;
+     display: flex;
+     align-items: flex-end;
+     gap: 8px;
+}
+
+.chat__list__sms__author p {
+     background-color: #f0f0f0;
+     color: #222222;
+     padding: 12px 16px;
+     border-radius: 16px 16px 16px 0;
+     font-size: 15px;
+     line-height: 1.4;
+     margin: 0;
+}
+
+.chat__list__send__btn__sms {
+     width: 100%;
+     padding: 16px;
+     background-color: white;
+     border-top: 1px solid #f0f0f0;
+     display: flex;
+     gap: 12px;
+     position: sticky;
+     bottom: 0;
+}
+
+.chat__list__send__btn__sms input {
+     flex: 1;
+     height: 44px;
+     background-color: #f0f0f0;
+     border: none;
+     border-radius: 22px;
+     padding: 0 16px;
+     font-size: 15px;
+     color: #222222;
+}
+
+.chat__list__send__btn__sms input::placeholder {
+     color: #999999;
+}
+
+.chat__list__send__btn__sms input:focus {
+     outline: none;
+     background-color: #e8e8e8;
+}
+
+.chat__list__send__btn__sms button {
+     height: 44px;
+     padding: 0 20px;
+     background-color: #aa3fec;
+     border: none;
+     border-radius: 22px;
+     color: white;
+     font-size: 15px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: background-color 0.2s;
+}
+
+.chat__list__send__btn__sms button:hover {
+     background-color: #9536d4;
+}
+
+/* Add timestamp styles */
+.chat__list__timestamp {
+     text-align: center;
+     margin: 16px 0;
+     color: #999999;
+     font-size: 13px;
+}
+
+/* Add responsive styles */
+@media (max-width: 480px) {
+
+     .chat__list__sms__user,
+     .chat__list__sms__author {
+          max-width: 90%;
+     }
+
+     .chat__list__send__btn__sms button {
+          padding: 0 16px;
+     }
+}

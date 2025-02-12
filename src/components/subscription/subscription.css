@@ -1,0 +1,144 @@
+.subscription__container {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding-bottom: 20%;
+     margin-top: -15px;
+}
+.subscription__title {
+     display:flex;
+     align-items: center;
+     justify-content: center;
+          position: relative;
+}
+.subscription__title > p {
+     font-size: 20px;
+     color: #222222;
+     margin-top: 20px;
+}
+
+.subscription__home__btn > a > img{
+     position: absolute;
+     top: 25px;
+     left: -100px;
+}
+
+.subscription__card {
+     width: 341px;
+          height: 141px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+               border-radius: 15px;
+          padding: 3%;
+          margin-top: 5%;
+          gap: 10px;
+}
+.subscription__card > h4 {
+     font-size: 25px;
+     font-weight: 400;
+}
+.subscription__txt {
+     display: flex;
+     align-items: start;
+     flex-direction: column;
+}
+.subscription__txt > span {
+     color: gray;
+     font-weight: 100;
+}
+.subscription__txt> p {
+     color: #222222;
+     font-weight: 500;
+     font-size: 33px;
+}
+.subscription__box {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 20px;
+}
+.subscription__box__tisket:hover {
+box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.subscription__box__tisket {
+     width: 101px;
+     height: 101px;
+     box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+          border-radius: 15px;
+          padding: 1%;
+          margin-top: 5%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+               position: relative;
+                         transition: background-color 0.3s ease;
+
+
+}
+
+.subscription__box__tisket > img {
+     width: 15px;
+     height: 15px;
+     position: absolute;
+     top: 8px;
+     left: 8px;
+   
+}
+.subscription__box__tisket > p {
+     color: #222222;
+     font-weight: 100;
+     text-align: center;
+}
+.subscription__btn {
+width: 286px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #aa3fec;
+     border-radius: 23px;
+     color: white;
+     margin-top: 30px;
+     transition: background-color 0.3s ease;
+}
+
+.subscription__btn:hover {
+     background-color: #8f33d6;
+}
+.subscription__checkbox {
+     display: flex;
+     align-items: start;
+     flex-direction: column;
+     margin-top: 15px;
+     gap: 5px;
+}
+.subscription__checkbox__txt {
+     display: flex;
+     align-items: start;
+     justify-content: start;
+     text-align: start;
+     gap: 1px;
+}
+.subscription__checkbox__txt > p {
+          width: 320px;
+     color: #222222;
+     font-size: 14px;
+     margin-top: -5px;
+     font-weight: 100;
+}
+
+.subscription__cards {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 10px;
+}
+.subscription__cards > img {
+     width: 60px;
+     cursor: pointer;
+}

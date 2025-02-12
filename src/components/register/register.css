@@ -1,0 +1,293 @@
+.register__container {
+     min-height: 70vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #fff;
+}
+
+.register__content {
+     width: 100%;
+     max-width: 400px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+}
+
+.register__content h1 {
+     font-size: 24px;
+     color: #222;
+     margin-bottom: 8px;
+}
+
+.register__subtitle {
+     color: #666;
+     font-size: 16px;
+     margin-bottom: 24px;
+}
+
+.register__progress {
+     width: 100%;
+     height: 4px;
+     background-color: #f0f0f0;
+     border-radius: 2px;
+     margin-bottom: 32px;
+     overflow: hidden;
+}
+
+.register__progress-bar {
+     height: 100%;
+     background-color: #aa3fec;
+     transition: width 0.3s ease;
+}
+
+.register__step {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     animation: fadeIn 0.3s ease;
+}
+
+.register__step h2 {
+     font-size: 20px;
+     color: #222;
+     margin-bottom: 8px;
+}
+
+.register__gender-btn {
+     width: 100%;
+     padding: 16px;
+     border: 2px solid #e0e0e0;
+     border-radius: 100px;
+     background: white;
+     color: #222;
+     font-size: 16px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.2s ease;
+}
+
+.register__gender-btn:hover {
+     border-color: #aa3fec;
+     background: #f9f0ff;
+}
+
+.register__gender-btn.active {
+     background: #aa3fec;
+     border-color: #aa3fec;
+     color: white;
+}
+
+.register__input {
+     width: 100%;
+     padding: 16px;
+     border: 1px solid #e0e0e0;
+     border-radius: 8px;
+     font-size: 16px;
+     color: #222;
+     transition: border-color 0.2s ease;
+}
+
+.register__input:focus {
+     outline: none;
+     border-color: #aa3fec;
+}
+
+.register__buttons {
+     display: flex;
+     gap: 12px;
+     margin-top: 16px;
+}
+
+.register__back-btn,
+.register__next-btn {
+     flex: 1;
+     padding: 14px;
+     border-radius: 100px;
+     font-size: 16px;
+     font-weight: 500;
+     cursor: pointer;
+     transition: all 0.2s ease;
+}
+
+.register__back-btn {
+     background: white;
+     border: 2px solid #e0e0e0;
+     color: #666;
+}
+
+.register__back-btn:hover {
+     border-color: #aa3fec;
+     color: #aa3fec;
+}
+
+.register__next-btn {
+     background: #aa3fec;
+     border: none;
+     color: white;
+}
+
+.register__next-btn:hover {
+     background: #9536d4;
+}
+
+.register__range-container {
+     width: 100%;
+     padding: 16px;
+     border: 1px solid #e0e0e0;
+     border-radius: 8px;
+}
+
+.register__range-label {
+     color: #666;
+     font-size: 14px;
+     margin-bottom: 8px;
+     text-align: left;
+}
+
+.register__range-values {
+     display: flex;
+     justify-content: space-between;
+     color: #222;
+     font-weight: 500;
+     margin-bottom: 8px;
+}
+
+.register__range {
+     width: 100%;
+     height: 4px;
+     -webkit-appearance: none;
+     background: #e0e0e0;
+     border-radius: 2px;
+     outline: none;
+}
+
+.register__range::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     width: 20px;
+     height: 20px;
+     background: #aa3fec;
+     border-radius: 50%;
+     cursor: pointer;
+     transition: background 0.2s ease;
+}
+
+.register__range::-webkit-slider-thumb:hover {
+     background: #9536d4;
+}
+
+.register__height-value {
+     display: block;
+     color: #222;
+     font-weight: 500;
+     margin-bottom: 8px;
+}
+.register__card__images {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 19px;
+
+}
+.register__box__images {
+     width: 80px;
+     height: 80px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 40px;
+     border: solid 1px #222;
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+     border-radius: 8px;
+     color: #aa3fec;
+}
+
+
+
+
+
+
+
+
+
+.register__image__upload {
+     background-color: #fff;
+     /* Белый фон */
+     border-radius: 20px;
+     padding: 30px;
+     width: 350px;
+     text-align: center;
+     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+     position: relative;
+}
+
+.register__image__upload__title img {
+     width: 50px;
+     /* Размер иконки камеры */
+     height: 50px;
+     background-color: #a855f7;
+     /* Фиолетовый фон */
+     padding: 10px;
+     border-radius: 50%;
+     display: inline-block;
+}
+
+.register__image__upload p {
+     font-size: 18px;
+     font-weight: bold;
+     margin-top: 15px;
+     color: #000;
+}
+
+.register__image__upload span {
+     font-size: 14px;
+     color: #666;
+     display: block;
+     margin: 15px 0;
+     line-height: 1.5;
+}
+
+
+
+
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          transform: translateY(10px);
+     }
+
+     to {
+          opacity: 1;
+          transform: translateY(0);
+     }
+}
+
+@media (max-width: 480px) {
+     .register__container {
+          padding: 16px;
+     }
+
+     .register__content h1 {
+          font-size: 22px;
+     }
+
+     .register__subtitle {
+          font-size: 14px;
+     }
+
+     .register__step h2 {
+          font-size: 18px;
+     }
+
+     .register__gender-btn,
+     .register__input,
+     .register__back-btn,
+     .register__next-btn {
+          padding: 14px;
+          font-size: 15px;
+     }
+}

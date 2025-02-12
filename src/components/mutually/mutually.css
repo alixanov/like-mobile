@@ -1,0 +1,76 @@
+.mutually__container {
+     text-align: center;
+     margin-top: 25px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding-bottom: 30%;
+}
+
+.mutually__header {
+     margin-bottom: 20px;
+}
+
+.mutually__header p {
+     font-size: 16px;
+     color: #333;
+     margin-bottom: 10px;
+}
+
+.mutually__premium-button {
+width: 286px;
+     height: 40px;
+ 
+     background-color: #aa3fec;
+     border-radius: 23px;
+     color: white;
+     margin-top: 30px;
+     transition: background-color 0.3s ease;
+}
+
+
+.mutually__premium-button:hover {
+     background-color: #8f33d6;
+}
+
+.mutually__profiles {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px;
+}
+
+.mutually__profile {
+     position: relative;
+     border: 2px solid #aa3fec;
+     border-radius: 10px;
+     overflow: hidden;
+}
+
+.mutually__profile-image {
+     width: 100%;
+     height: auto;
+     display: block;
+}
+
+.mutually__profile-actions {
+ 
+     position: absolute;
+     bottom: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+     gap: 10px;
+
+}
+
+.mutually__profile-action {
+     width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          border-radius: 50%;
+     cursor: pointer;
+}

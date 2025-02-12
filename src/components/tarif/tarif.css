@@ -1,0 +1,172 @@
+.tarif__container {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding-bottom: 30%;
+}
+
+.tarif__container>p {
+     color: #222222;
+     font-size: 22px;
+
+}
+
+.tarif__card {
+     width: 341px;
+     height: 181px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+     border-radius: 18px;
+     padding: 3%;
+     margin-top: 5%;
+}
+
+.tarif__box {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+}
+
+.tarif__box>p {
+     color: #222222;
+     font-size: 19px;
+}
+
+.tarif__box>span {
+     color: gray;
+     font-size: 15px;
+}
+
+.tarif__card>button {
+     width: 286px;
+     height: 40px;
+     background-color: #aa3fec;
+     border-radius: 23px;
+     color: white;
+     margin-top: 30px;
+     transition: background-color 0.3s ease;
+}
+
+
+.tarif__card>button:hover {
+     background-color: #8f33d6;
+}
+
+.tarif___tisket {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     margin-top: 30px;
+}
+
+.tarif__tisket__box {
+     width: 106px;
+     height: 106px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+     padding: 1%;
+     border-radius: 8px;
+          transition: background-color 0.3s ease;
+          cursor: pointer;
+     
+}
+.tarif__tisket__box:hover {
+     border: solid 2px #8f33d6;
+     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.tarif__tisket__box>p {
+color: #222222;
+     font-size: 19px;
+     font-weight: 500;
+}
+
+.tarif__tisket__box>span {
+     color: #222222;
+     font-size: 20px;
+     font-weight: 700;
+}
+
+.tarif__tisket__box>h5 {
+     color: gray;
+     font-size: 9px;
+     font-weight: 200;
+}
+
+
+.tarif__plan___card {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     margin-top: 15px;
+     gap: 10px;
+}
+
+
+.tarif__plan__box {
+     width: 341px;
+     height: 65px;
+     display: flex;
+     align-items: center;
+     justify-content: start;
+     gap: 7px;
+          box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+          padding: 2%;
+          border-radius: 18px;
+                    transition: background-color 0.3s ease;
+
+}
+.tarif__plan__box:hover {
+     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.tarif__plan__box>img {
+     width: 31px;
+     height: 31px;
+}
+
+.tarif__plan__txt {
+     display: flex;
+     align-items: start;
+     justify-content: center;
+     flex-direction: column;
+}
+
+.tarif__plan__txt>p {
+     font-size: 16px;
+     color: #222222;
+     font-weight: 600;
+}
+
+.tarif__plan__txt>span {
+     font-size: 13px;
+     color: gray;
+     font-weight: 100;
+}
+.tarif__card__end__btn {
+width: 286px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #aa3fec;
+     border-radius: 23px;
+     color: white;
+     margin-top: 30px;
+     transition: background-color 0.3s ease;
+}
+
+
+.tarif__card__end__btn:hover {
+     background-color: #8f33d6;
+}

@@ -29,10 +29,12 @@ body {
   justify-content: center;
   flex-direction: column;
   padding-inline: 10px;
+  /* padding-bottom: 30%; */
 }
 .root__container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
