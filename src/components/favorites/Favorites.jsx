@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import img1 from '../../assets/swiper-img/11111111111111.png';
 import img2 from '../../assets/swiper-img/2222222222222222.png';
+import img3 from '../../assets/swiper-img/image.png';
+
 
 
 import "./favorites.css";
@@ -10,7 +12,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 const initialGirls = [
      { id: 1, name: 'Ника', img: img1, age: 36, city: 'Москва', status: 'Свободная', height: 166 },
      { id: 2, name: 'Алиса', img: img2, age: 24, city: 'СПб', status: 'Свободная', height: 170 },
-     { id: 3, name: 'Мария', img: img1, age: 27, city: 'Казань', status: 'Свободная', height: 165 },
+     { id: 3, name: 'Мария', img: img3, age: 27, city: 'Казань', status: 'Свободная', height: 165 },
      { id: 4, name: 'София', img: img2, age: 22, city: 'Екатеринбург', status: 'Свободная', height: 173 },
      { id: 5, name: 'Анна', img: img1, age: 29, city: 'Новосибирск', status: 'Свободная', height: 168 },
 ];

@@ -12,6 +12,7 @@ const Header = () => {
                     <div className="header__links">
                          <NavLink
                               to="/header"
+                              end // Добавлено свойство end
                               className={({ isActive }) => isActive ? "header__link active" : "header__link"}
                               aria-label="Ваши лайки"
                          >

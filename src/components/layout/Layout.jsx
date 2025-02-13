@@ -1,39 +1,58 @@
-import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/love-search-logo.svg";
 import "./layout.css";
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 
 const Layout = () => {
+     const location = useLocation();
+     const navigate = useNavigate();
+
      return (
           <div className="layout__container">
                {/* Навигация */}
                <nav className="nav__container">
                     {/* Логотип */}
                     <div className="nav__logo">
-                         <NavLink to={"/reactjs-js-template/"} aria-label="Главная">
+                         <button
+                              onClick={() => navigate("/reactjs-js-template/")}
+                              className={location.pathname === "/reactjs-js-template/" ? "active" : ""}
+                              aria-label="Главная"
+                         >
                               <img src={logo} alt="Love Search Logo" />
-                         </NavLink>
+                         </button>
                     </div>
 
-                    {/* Навигационные ссылки */}
+                    {/* Навигационные кнопки */}
                     <div className="nav__links">
-                         <NavLink to={"/heart"} className="nav__link" aria-label="Лайки">
+                         <button
+                              onClick={() => navigate("/heart")}
+                              className={`nav__link ${location.pathname === "/heart" ? "active" : ""}`}
+                              aria-label="Лайки"
+                         >
                               <FavoriteBorderIcon />
                               <div className="nav__alert">12</div>
-                         </NavLink>
+                         </button>
 
-                         <NavLink to="/header/mutually" className="nav__link" aria-label="Группы">
+                         <button
+                              onClick={() => navigate("/header/mutually")}
+                              className={`nav__link ${location.pathname === "/header/mutually" ? "active" : ""}`}
+                              aria-label="Группы"
+                         >
                               <GroupsOutlinedIcon />
                               <div className="nav__alert">12</div>
-                         </NavLink>
+                         </button>
 
-                         <NavLink to="/heart/chat" className="nav__link" aria-label="Чат">
+                         <button
+                              onClick={() => navigate("/heart/chat")}
+                              className={`nav__link ${location.pathname === "/heart/chat" ? "active" : ""}`}
+                              aria-label="Чат"
+                         >
                               <ChatBubbleOutlineOutlinedIcon />
                               <div className="nav__alert">12</div>
-                         </NavLink>
+                         </button>
                     </div>
                </nav>
 

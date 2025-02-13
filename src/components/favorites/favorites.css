@@ -3,14 +3,14 @@
      justify-content: center;
      align-items: center;
      position: relative;
+     margin-top: 4%;
 }
 
 .heart__card {
      position: relative;
      width: 320px;
-     height: 540px;
+     height: 520px;
      perspective: 1000px;
-          /* overflow: hidden; */
 }
 
 .image-container {
@@ -30,6 +30,7 @@
      height: 100%;
      object-fit: cover;
      border-radius: 15px;
+     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
@@ -119,7 +120,7 @@
 }
 .btn-swip {
      position: absolute;
-     bottom: -50px;
+     bottom: -70px;
      display: flex;
      justify-content: space-between;
      width: 100%;
