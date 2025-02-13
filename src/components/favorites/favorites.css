@@ -3,13 +3,13 @@
      justify-content: center;
      align-items: center;
      position: relative;
-     margin-top: 4%;
+     margin-top: 3%;
 }
 
 .heart__card {
      position: relative;
      width: 320px;
-     height: 520px;
+     height: 500px;
      perspective: 1000px;
 }
 
