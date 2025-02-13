@@ -1,121 +1,155 @@
 .heart__container {
      display: flex;
-     align-items: center;
      justify-content: center;
-     flex-direction: column;
-     padding-bottom: 30%;
-     margin-top: -15px;
+     align-items: center;
+     position: relative;
 }
 
 .heart__card {
      position: relative;
-     width: 100%;
-     max-width: 350px;
+     width: 320px;
+     height: 540px;
+     perspective: 1000px;
+          /* overflow: hidden; */
 }
 
 .image-container {
-     position: relative;
      width: 100%;
-     border-radius: 10px;
-     overflow: hidden;
+     height: 100%;
+     position: absolute;
+     transform-origin: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 .image-container img {
      width: 100%;
-     height: auto;
+     height: 100%;
      object-fit: cover;
-     transition: opacity 0.3s ease-out;
+     border-radius: 15px;
+     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
-.fade-out {
-     opacity: 0;
+.transitioning-left {
+     animation: swipeLeft 0.4s ease-out forwards;
 }
 
-.fade-in {
-     opacity: 1;
+.transitioning-right {
+     animation: swipeRight 0.4s ease-out forwards;
+}
+
+@keyframes swipeLeft {
+     0% {
+          transform: rotate(0deg) translateX(0);
+          opacity: 1;
+     }
+
+     50% {
+          transform: rotate(-20deg) translateX(-150px);
+          opacity: 0.8;
+     }
+
+     100% {
+          transform: rotate(-30deg) translateX(-300px);
+          opacity: 0;
+     }
+}
+
+@keyframes swipeRight {
+     0% {
+          transform: rotate(0deg) translateX(0);
+          opacity: 1;
+     }
+
+     50% {
+          transform: rotate(20deg) translateX(150px);
+          opacity: 0.8;
+     }
+
+     100% {
+          transform: rotate(30deg) translateX(300px);
+          opacity: 0;
+     }
+}
+
+.appear {
+     animation: appearCard 0.4s ease-in forwards;
+}
+
+@keyframes appearCard {
+     0% {
+          transform: rotate(0deg) translateX(0);
+          opacity: 0;
+     }
+
+     50% {
+          transform: rotate(0deg) translateX(0);
+          opacity: 0.5;
+     }
+
+     100% {
+          transform: rotate(0deg) translateX(0);
+          opacity: 1;
+     }
 }
 
 .heart__txt__sli {
-     position: relative;
-}
-
-.text_sli {
+     position: absolute;
+     bottom: 20px;
+     color: white;
+     padding: 10px;
+     border-radius: 10px;
+     text-align: center;
+     width: 80%;
      display: flex;
      align-items: start;
-     justify-content: center;
      flex-direction: column;
-     position: absolute;
-     bottom: 50px;
-     left: 50px;
-     transition: opacity 0.3s ease-out;
+     left: 10px;
 }
-
-.text_sli > p {
+.heart__txt__sli > p {
      color: white;
-     font-size: 27px;
-     font-weight: bold;
-     margin: 0;
+     font-size: 33px;
 }
-
-.text_sli > span {
+.heart__txt__sli> span {
      color: white;
-     font-size: 19px;
-     font-weight: 100;
+     font-size: 22px;
 }
-
 .btn-swip {
-     width: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 200px;
-     margin-top: -20px;
-     position: relative;
-     z-index: 2;
-}
-
-.heart-icon,
-.cross-icon {
      position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     z-index: 1;
+     bottom: -50px;
+     display: flex;
+     justify-content: space-between;
+     width: 100%;
 }
 
-/* Адаптивность */
-@media (max-width: 391px) {
-     .heart__card {
-          max-height: 580px;
-     }
-
-     .btn-swip {
-          gap: 180px;
-     }
-
-     .image-container {
-     max-width: 390px;     }
+.btn__right{
+     width: 50px;
+     height: 50px;
+     background: #aa3fec;;
+     border: none;
+     cursor: pointer;
+     transition: transform 0.2s ease;
+     border-radius: 50%;
+     color: white;
 }
 
-@media (max-width: 376px) {
-     .heart__card {
-          max-height: 465px;
-     }
-
-     .image-container {
-          width: 330px;
-          /* max-height: 510px; */
-          margin: 0 auto;
-     }
+.btn__right:hover {
+     transform: scale(1.1);
+}
+.btn__left {
+     width: 50px;
+     height: 50px;
+     background: red;;
+     border: none;
+     cursor: pointer;
+     transition: transform 0.2s ease;
+     border-radius: 50%;
+     color: white;
 }
 
-@media (max-width: 361px) {
-     .heart__card {
-          /* max-height: 550px; */
-     }
-
-     .image-container {
-          width: 330px;
-          /* max-height: 590px; */
-     }
+.btn__left:hover {
+     transform: scale(1.1);
 }
