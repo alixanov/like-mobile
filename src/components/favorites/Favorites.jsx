@@ -19,13 +19,14 @@ const Favorites = () => {
      const [currentIndex, setCurrentIndex] = useState(0);
      const [isTransitioning, setIsTransitioning] = useState(false);
      const [animationClass, setAnimationClass] = useState('appear');
-     const [showButton, setShowButton] = useState(null); // Состояние для отображения кнопки
+     const [showButton, setShowButton] = useState(null);
+     const [touchStartX, setTouchStartX] = useState(null); // Начальная позиция касания
 
      const handleTransition = (direction, buttonType) => {
           if (isTransitioning) return;
           setIsTransitioning(true);
           setAnimationClass(`transitioning-${direction}`);
-          setShowButton(buttonType); // Показываем кнопку в центре
+          setShowButton(buttonType);
 
           setTimeout(() => {
                setCurrentIndex((prevIndex) => {
@@ -36,23 +37,45 @@ const Favorites = () => {
                     }
                });
                setAnimationClass('appear');
-               setShowButton(null); // Убираем кнопку после смены карточки
+               setShowButton(null);
                setTimeout(() => {
                     setIsTransitioning(false);
                }, 400);
           }, 400);
      };
 
+     const handleTouchStart = (e) => {
+          setTouchStartX(e.touches[0].clientX);
+     };
+
+     const handleTouchEnd = (e) => {
+          if (touchStartX === null) return;
+
+          const touchEndX = e.changedTouches[0].clientX;
+          const deltaX = touchEndX - touchStartX;
+
+          if (deltaX > 50) {
+               handleTransition('left', 'cross'); // Свайп вправо
+          } else if (deltaX < -50) {
+               handleTransition('right', 'heart'); // Свайп влево
+          }
+
+          setTouchStartX(null);
+     };
+
      return (
           <div className="heart__container">
                <div className="heart__card">
-                    <div className={`image-container ${animationClass}`}>
+                    <div
+                         className={`image-container ${animationClass}`}
+                         onTouchStart={handleTouchStart}
+                         onTouchEnd={handleTouchEnd}
+                    >
                          <img
                               src={initialGirls[currentIndex].img}
                               alt={initialGirls[currentIndex].name}
                          />
 
-                         {/* Значок нажатой кнопки в центре */}
                          {showButton && (
                               <div className={`button-overlay ${showButton === 'heart' ? 'heart' : 'cross'}`}>
                                    {showButton === 'heart' ? (
