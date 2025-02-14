@@ -154,3 +154,37 @@
 .btn__left:hover {
      transform: scale(1.1);
 }
+.button-overlay {
+     position: absolute;
+     top: 47%;
+     left: 35%;
+     transform: translate(-50%, -50%);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: rgba(255, 255, 255, 0.3);
+     border-radius: 50%;
+     width: 60px;
+     height: 60px;
+     animation: fadeOut 0.5s ease-out forwards;
+}
+
+.button-overlay.heart {
+     color: #aa3fec;
+}
+
+.button-overlay.cross {
+     color: #ff3333;
+}
+
+@keyframes fadeOut {
+     0% {
+          opacity: 1;
+          transform: scale(1);
+     }
+
+     100% {
+          opacity: 0;
+          transform: scale(1.5);
+     }
+}

@@ -25,6 +25,7 @@ button {
      
 button:focus {
      outline: none;
+     border: none;
 }
 
 .footerIcon {
@@ -32,6 +33,3 @@ button:focus {
      height: 24px;
 }
 
-.active {
-     opacity: 1 !important;
-}

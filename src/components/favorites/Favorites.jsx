@@ -3,8 +3,6 @@ import img1 from '../../assets/swiper-img/11111111111111.png';
 import img2 from '../../assets/swiper-img/2222222222222222.png';
 import img3 from '../../assets/swiper-img/image.png';
 
-
-
 import "./favorites.css";
 import CloseIcon from '@mui/icons-material/Close';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -21,11 +19,13 @@ const Favorites = () => {
      const [currentIndex, setCurrentIndex] = useState(0);
      const [isTransitioning, setIsTransitioning] = useState(false);
      const [animationClass, setAnimationClass] = useState('appear');
+     const [showButton, setShowButton] = useState(null); // Состояние для отображения кнопки
 
-     const handleTransition = (direction) => {
+     const handleTransition = (direction, buttonType) => {
           if (isTransitioning) return;
           setIsTransitioning(true);
           setAnimationClass(`transitioning-${direction}`);
+          setShowButton(buttonType); // Показываем кнопку в центре
 
           setTimeout(() => {
                setCurrentIndex((prevIndex) => {
@@ -36,6 +36,7 @@ const Favorites = () => {
                     }
                });
                setAnimationClass('appear');
+               setShowButton(null); // Убираем кнопку после смены карточки
                setTimeout(() => {
                     setIsTransitioning(false);
                }, 400);
@@ -51,6 +52,17 @@ const Favorites = () => {
                               alt={initialGirls[currentIndex].name}
                          />
 
+                         {/* Значок нажатой кнопки в центре */}
+                         {showButton && (
+                              <div className={`button-overlay ${showButton === 'heart' ? 'heart' : 'cross'}`}>
+                                   {showButton === 'heart' ? (
+                                        <FavoriteIcon sx={{ fontSize: "80px" }} />
+                                   ) : (
+                                        <CloseIcon sx={{ fontSize: "80px" }} />
+                                   )}
+                              </div>
+                         )}
+
                          <div className="heart__txt__sli">
                               <p>{initialGirls[currentIndex].name}, {initialGirls[currentIndex].age}</p>
                               <span>{initialGirls[currentIndex].city}</span>
@@ -59,12 +71,11 @@ const Favorites = () => {
                          </div>
 
                          <div className="btn-swip">
-                              
-                              <button className="swipe-rightt" onClick={() => handleTransition('right')}>
-                                   <CloseIcon sx={{ fontSize: "45px" }}  alt="swipe right" className='btn__left' />
+                              <button className="swipe-rightt" onClick={() => handleTransition('left', 'cross')}>
+                                   <CloseIcon sx={{ fontSize: "45px" }} className='btn__left' />
                               </button>
-                              <button className="swipe-leftt" onClick={() => handleTransition('left')}>
-                                   <FavoriteIcon sx={{ fontSize: "45px" }} alt="swipe left" className='btn__right' />
+                              <button className="swipe-leftt" onClick={() => handleTransition('right', 'heart')}>
+                                   <FavoriteIcon sx={{ fontSize: "45px" }} className='btn__right' />
                               </button>
                          </div>
                     </div>
