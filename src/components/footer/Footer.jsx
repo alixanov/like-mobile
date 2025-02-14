@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import diamondActive from '../../assets/diamond-active.svg';
 import diamond from '../../assets/diamond.svg';
@@ -35,8 +35,6 @@ const navItems = [
 ];
 
 const Footer = () => {
-     const location = useLocation();
-
      return (
           <footer className='footer'>
                {navItems.map((item) => (
@@ -44,17 +42,14 @@ const Footer = () => {
                          key={item.path}
                          to={item.path}
                          className={({ isActive }) => (isActive ? 'active' : '')}
-                         style={({ isActive }) => ({
-                              background: 'none',
-                              border: 'none',
-                              opacity: isActive ? 1 : 0.5,
-                         })}
                     >
-                         <img
-                              src={location.pathname === item.path ? item.activeIcon : item.inactiveIcon}
-                              className='footerIcon'
-                              style={{ width: 24, height: 24 }}
-                         />
+                         {({ isActive }) => (
+                              <img
+                                   src={isActive ? item.activeIcon : item.inactiveIcon}
+                                   className='footerIcon'
+                                   style={{ width: 24, height: 24, opacity: isActive ? 1 : 0.5 }}
+                              />
+                         )}
                     </NavLink>
                ))}
           </footer>
