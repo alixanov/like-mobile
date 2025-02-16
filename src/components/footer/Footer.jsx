@@ -20,7 +20,7 @@ const navItems = [
      {
           activeIcon: historyActive,
           inactiveIcon: history,
-          path: '/header',
+          path: '/history',
      },
      {
           activeIcon: diamondActive,
