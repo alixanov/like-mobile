@@ -44,34 +44,24 @@
 
 @keyframes swipeLeft {
      0% {
-          transform: rotate(0deg) translateX(0);
+          transform: translateX(0) rotate(0deg);
           opacity: 1;
      }
 
-     50% {
-          transform: rotate(-20deg) translateX(-150px);
-          opacity: 0.8;
-     }
-
      100% {
-          transform: rotate(-30deg) translateX(-300px);
+          transform: translateX(-100%) rotate(-20deg);
           opacity: 0;
      }
 }
 
 @keyframes swipeRight {
      0% {
-          transform: rotate(0deg) translateX(0);
+          transform: translateX(0) rotate(0deg);
           opacity: 1;
      }
 
-     50% {
-          transform: rotate(20deg) translateX(150px);
-          opacity: 0.8;
-     }
-
      100% {
-          transform: rotate(30deg) translateX(300px);
+          transform: translateX(100%) rotate(20deg);
           opacity: 0;
      }
 }
@@ -82,17 +72,12 @@
 
 @keyframes appearCard {
      0% {
-          transform: rotate(0deg) translateX(0);
+          transform: translateX(0) rotate(0deg);
           opacity: 0;
      }
 
-     50% {
-          transform: rotate(0deg) translateX(0);
-          opacity: 0.5;
-     }
-
      100% {
-          transform: rotate(0deg) translateX(0);
+          transform: translateX(0) rotate(0deg);
           opacity: 1;
      }
 }
@@ -110,14 +95,17 @@
      flex-direction: column;
      left: 10px;
 }
-.heart__txt__sli > p {
+
+.heart__txt__sli>p {
      color: white;
      font-size: 33px;
 }
-.heart__txt__sli> span {
+
+.heart__txt__sli>span {
      color: white;
      font-size: 22px;
 }
+
 .btn-swip {
      position: absolute;
      bottom: -70px;
@@ -126,10 +114,11 @@
      width: 100%;
 }
 
-.btn__right{
+.btn__right {
      width: 50px;
      height: 50px;
-     background: #aa3fec;;
+     background: #aa3fec;
+     ;
      border: none;
      cursor: pointer;
      transition: transform 0.2s ease;
@@ -140,10 +129,12 @@
 .btn__right:hover {
      transform: scale(1.1);
 }
+
 .btn__left {
      width: 50px;
      height: 50px;
-     background: red;;
+     background: red;
+     ;
      border: none;
      cursor: pointer;
      transition: transform 0.2s ease;
@@ -154,6 +145,7 @@
 .btn__left:hover {
      transform: scale(1.1);
 }
+
 .button-overlay {
      position: absolute;
      top: 47%;
