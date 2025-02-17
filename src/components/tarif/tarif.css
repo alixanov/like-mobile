@@ -10,11 +10,10 @@
 .tarif__container>p {
      color: #222222;
      font-size: 22px;
-
 }
 
 .tarif__card {
-     width: 341px;
+     width: 351px;
      height: 181px;
      display: flex;
      align-items: center;
@@ -31,7 +30,6 @@
      display: flex;
      align-items: center;
      justify-content: space-between;
-
 }
 
 .tarif__box>p {
@@ -54,7 +52,6 @@
      transition: background-color 0.3s ease;
 }
 
-
 .tarif__card>button:hover {
      background-color: #8f33d6;
 }
@@ -68,8 +65,8 @@
 }
 
 .tarif__tisket__box {
-     width: 106px;
-     height: 106px;
+     width: 110px;
+     height: 110px;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -77,16 +74,17 @@
      box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
      padding: 1%;
      border-radius: 8px;
-          transition: background-color 0.3s ease;
-          cursor: pointer;
-     
+     transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+     cursor: pointer;
 }
+
 .tarif__tisket__box:hover {
      border: solid 2px #8f33d6;
      box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
 }
+
 .tarif__tisket__box>p {
-color: #222222;
+     color: #222222;
      font-size: 19px;
      font-weight: 500;
 }
@@ -103,7 +101,6 @@ color: #222222;
      font-weight: 200;
 }
 
-
 .tarif__plan___card {
      display: flex;
      align-items: center;
@@ -113,23 +110,23 @@ color: #222222;
      gap: 10px;
 }
 
-
 .tarif__plan__box {
-     width: 341px;
+     width: 351px;
      height: 65px;
      display: flex;
      align-items: center;
      justify-content: start;
      gap: 7px;
-          box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
-          padding: 2%;
-          border-radius: 18px;
-                    transition: background-color 0.3s ease;
-
+     box-shadow: rgba(14, 63, 126, 0.06) 0px 0px 0px 1px, rgba(42, 51, 70, 0.03) 0px 1px 1px -0.5px, rgba(42, 51, 70, 0.04) 0px 2px 2px -1px, rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px, rgba(42, 51, 70, 0.03) 0px 5px 5px -2.5px, rgba(42, 51, 70, 0.03) 0px 10px 10px -5px, rgba(42, 51, 70, 0.03) 0px 24px 24px -8px;
+     padding: 2%;
+     border-radius: 18px;
+     transition: box-shadow 0.3s ease;
 }
+
 .tarif__plan__box:hover {
      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
+
 .tarif__plan__box>img {
      width: 31px;
      height: 31px;
@@ -153,8 +150,9 @@ color: #222222;
      color: gray;
      font-weight: 100;
 }
+
 .tarif__card__end__btn {
-width: 286px;
+     width: 286px;
      height: 40px;
      display: flex;
      align-items: center;
@@ -166,7 +164,18 @@ width: 286px;
      transition: background-color 0.3s ease;
 }
 
-
 .tarif__card__end__btn:hover {
      background-color: #8f33d6;
+}
+
+.tarif__tisket__box.selected {
+     background-color: #aa3fec;
+     border: solid 2px #8f33d6;
+     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.tarif__tisket__box.selected>p,
+.tarif__tisket__box.selected>span,
+.tarif__tisket__box.selected>h5 {
+     color: white;
 }

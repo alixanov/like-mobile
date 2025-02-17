@@ -163,6 +163,7 @@
      width: 350px;
      height: 190px;
      border: solid 3px #aa3fec;
+     background-color: rgba(255, 255, 255, 0.616);
      border-radius: 23px;
      padding: 3%;
      display: flex;
@@ -173,17 +174,34 @@
      margin-top: 3%;
      position: relative;
 }
-
 .profile__active__form__card>p {
      color: #222222;
-     font-size: 23px;
+     font-size: 24px;
+     font-weight: 500;
+     letter-spacing: 0.2px;
+     /* Немного увеличен интервал между буквами */
+     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2),
+          3px 3px 8px rgba(0, 0, 0, 0.15);
+     /* Более глубокая тень */
+     opacity: 0.95;
+     transition: text-shadow 0.3s ease-in-out;
+     /* Плавный эффект */
 }
 
 .profile__active__form__card>span {
      color: #222222;
-     font-size: 23px;
+     font-size: 24px;
      font-weight: bold;
+     letter-spacing: 0.2px;
+     /* Больше акцент на жирный текст */
+     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25),
+          4px 4px 10px rgba(0, 0, 0, 0.2);
+     /* Более яркая и насыщенная тень */
+     opacity: 1;
+     transition: text-shadow 0.3s ease-in-out;
+     /* Плавный эффект */
 }
+
 
 .profile__active__form__card>button {
      width: 169px;
@@ -204,9 +222,9 @@
 
 .profile__premium__alert {
      width: 300px;
-     height: 400px;
+     height: 340px;
      border-radius: 23px;
-     background-color: #f9f0ff;
+     background-color: white;
      padding: 1%;
      display: flex;
      align-items: center;
@@ -220,8 +238,8 @@
 }
 
 .profile__premium__alert__icon {
-     width: 60px;
-     height: 60px;
+     width: 50px;
+     height: 50px;
      border-radius: 50%;
      background-color: #8f33d6;
      display: flex;
@@ -231,13 +249,13 @@
 
 .profile__premium__alert>p {
      color: #222222;
-     font-size: 22px;
+     font-size: 20px;
      font-weight: 700;
 }
 
 .profile__premium__alert>span {
      color: gray;
-     font-size: 19px;
+     font-size: 16px;
      font-weight: 400;
 }
 
