@@ -1,3 +1,5 @@
+
+
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
@@ -54,7 +56,7 @@ const Favorites = () => {
                     loop={true}
                >
                     {girls.map((girl) => (
-                         <SwiperSlide key={girl.id} className={`image-container ${action ? `swipe-${action}` : ""}`}>
+                         <SwiperSlide key={girl.id} className="image-container">
                               <img src={girl.img} alt={girl.name} />
                               {action && (
                                    <div className={`swipe-text ${action}`}>

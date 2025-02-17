@@ -3,14 +3,12 @@
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     height: 65vh;
-     /* Изменил на 100vh для лучшего отображения */
-     position: relative;
+     height: 66vh;
 }
 
 .heart__card {
      width: 320px;
-     height: 460px;
+     height: 450px;
      position: relative;
 }
 
@@ -21,7 +19,6 @@
      align-items: center;
      justify-content: center;
      position: relative;
-     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .image-container img {
@@ -30,15 +27,16 @@
      object-fit: cover;
      border-radius: 15px;
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 /* Анимация свайпа */
-.image-container.swipe-like {
+.swipe-like {
      transform: translateX(100%) rotate(15deg);
      opacity: 0;
 }
 
-.image-container.swipe-dislike {
+.swipe-dislike {
      transform: translateX(-100%) rotate(-15deg);
      opacity: 0;
 }
@@ -53,11 +51,10 @@
      padding: 10px 20px;
      border-radius: 5px;
      animation: fadeOut 0.3s ease-in-out;
-     z-index: 10;
 }
 
 .swipe-text.like {
-     color: #aa3fec;
+     color: #4caf50;
      left: 50%;
      transform: translateX(-50%);
 }
@@ -81,25 +78,21 @@
      align-items: start;
      flex-direction: column;
      left: 10px;
-     /* Добавил фон для лучшей читаемости */
 }
 
 .heart__txt__sli p {
      font-size: 24px;
      font-weight: bold;
-     margin: 0;
 }
 
 .heart__txt__sli span {
      font-size: 18px;
-     margin: 4px 0;
 }
 
 /* Стили кнопок */
 .btn-swip {
      position: absolute;
-     bottom: -55px;
-     /* Изменил позицию кнопок */
+     bottom: 150px;
      display: flex;
      justify-content: space-between;
      width: 100%;
@@ -131,6 +124,51 @@
 .btn__right:hover,
 .btn__left:hover {
      transform: scale(1.1);
+}
+
+/* Анимация исчезновения текста */
+@keyframes fadeOut {
+     0% {
+          opacity: 1;
+     }
+
+     100% {
+          opacity: 0;
+     }
+}
+
+/* Если анкеты закончились */
+.no-more {
+     font-size: 24px;
+     font-weight: bold;
+     color: #333;
+}
+
+/* Текст "Лайк" / "Дизлайк" */
+.swipe-text {
+     position: absolute;
+     top: 40%;
+     font-size: 24px;
+     font-weight: bold;
+     text-transform: uppercase;
+     padding: 10px 20px;
+     border-radius: 5px;
+     animation: fadeOut 0.3s ease-in-out;
+     z-index: 10;
+}
+
+.swipe-text.like {
+
+     color: #aa3fec;
+     left: 50%;
+     transform: translateX(-50%);
+
+}
+
+.swipe-text.dislike {
+     color: #f44336;
+     left: 50%;
+     transform: translateX(-50%);
 }
 
 /* Анимация исчезновения текста */
