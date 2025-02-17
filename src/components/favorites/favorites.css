@@ -1,9 +1,17 @@
 .heart__container {
+width: 100%;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     height: 66vh;
+     height: 100vh;
+     /* Высота 100% окна для фиксации */
+     max-height: 86vh;
+     /* Ограничение максимальной высоты */
+     overflow: hidden;
+     /* Избегаем переполнения */
+     position: relative;
+     margin-top: -100px;
 }
 
 .heart__card {
@@ -19,13 +27,13 @@
      align-items: center;
      justify-content: center;
      position: relative;
-          border-radius: 18px;
+     border-radius: 18px;
 }
 
 .image-container img {
      width: 100%;
-     /* height: 100%; */
-     height: 500px;
+     height: 450px;
+     /* Фиксированная высота, чтобы избежать изменения */
      object-fit: cover;
      border-radius: 15px;
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -95,11 +103,14 @@
 /* Стили кнопок */
 .btn-swip {
      position: absolute;
-     bottom: 100px;
+     bottom: 10px;
+     /* Меньший отступ снизу, чтобы кнопки не влияли на структуру */
      display: flex;
      justify-content: space-between;
      width: 100%;
      max-width: 300px;
+     z-index: 100;
+     /* Кнопки остаются над swiper */
 }
 
 .btn__right,
@@ -161,26 +172,13 @@
 }
 
 .swipe-text.like {
-
      color: #aa3fec;
      left: 50%;
      transform: translateX(-50%);
-
 }
 
 .swipe-text.dislike {
      color: #f44336;
      left: 50%;
      transform: translateX(-50%);
-}
-
-/* Анимация исчезновения текста */
-@keyframes fadeOut {
-     0% {
-          opacity: 1;
-     }
-
-     100% {
-          opacity: 0;
-     }
 }
