@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import img1 from '../../assets/swiper-img/11111111111111.png';
 import img2 from '../../assets/swiper-img/2222222222222222.png';
 import img3 from '../../assets/swiper-img/image.png';
@@ -21,6 +21,17 @@ const Favorites = () => {
      const [animationClass, setAnimationClass] = useState('appear');
      const [showButton, setShowButton] = useState(null);
      const [touchStartX, setTouchStartX] = useState(null); // Начальная позиция касания
+     const [isMobile, setIsMobile] = useState(false); // Для проверки мобильного устройства
+
+     useEffect(() => {
+          // Определяем, мобильное устройство или нет
+          const checkIsMobile = () => {
+               setIsMobile(window.innerWidth <= 768);
+          };
+          checkIsMobile();
+          window.addEventListener('resize', checkIsMobile);
+          return () => window.removeEventListener('resize', checkIsMobile);
+     }, []);
 
      const handleTransition = (direction, buttonType) => {
           if (isTransitioning) return;
@@ -54,10 +65,22 @@ const Favorites = () => {
           const touchEndX = e.changedTouches[0].clientX;
           const deltaX = touchEndX - touchStartX;
 
-          if (deltaX > 50) {
-               handleTransition('left', 'cross'); // Свайп вправо
-          } else if (deltaX < -50) {
-               handleTransition('right', 'heart'); // Свайп влево
+          // Проверяем, мобильный режим или нет
+          if (isMobile) {
+               if (deltaX > 50) {
+                    // Пропускаем анкету (вправо) без действия
+                    handleTransition('left', null);
+               } else if (deltaX < -50) {
+                    // Пропускаем анкету (влево) без действия
+                    handleTransition('right', null);
+               }
+          } else {
+               // На десктопе свайп вправо - дизлайк, влево - лайк
+               if (deltaX > 50) {
+                    handleTransition('left', 'cross'); // Десктоп: дизлайк
+               } else if (deltaX < -50) {
+                    handleTransition('right', 'heart'); // Десктоп: лайк
+               }
           }
 
           setTouchStartX(null);
