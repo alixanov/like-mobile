@@ -1,17 +1,17 @@
 .heart__container {
-width: 100%;
+/* width: 100%; */
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
      height: 100vh;
      /* Высота 100% окна для фиксации */
-     max-height: 86vh;
+     max-height: 90vh;
      /* Ограничение максимальной высоты */
      overflow: hidden;
      /* Избегаем переполнения */
      position: relative;
-     margin-top: -100px;
+     margin-top: -80px;
 }
 
 .heart__card {
