@@ -34,53 +34,75 @@
      transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
+
+
+
 .transitioning-left {
-     animation: swipeLeft 0.4s ease-out forwards;
+     animation: swipeLeftBottom 0.4s ease-out forwards;
+     /* Анимация для bottom-left */
 }
 
 .transitioning-right {
-     animation: swipeRight 0.4s ease-out forwards;
+     animation: swipeBottomRight 0.4s ease-out forwards;
+     /* Анимация для bottom-right */
 }
 
-@keyframes swipeLeft {
+@keyframes swipeLeftBottom {
      0% {
-          transform: translateX(0) rotate(0deg);
+          transform: translate(0, 0) rotate(0deg);
           opacity: 1;
      }
 
      100% {
-          transform: translateX(-100%) rotate(-20deg);
+          transform: translate(-80%, 80%) rotate(-30deg);
+          /* Двигается вниз-влево */
           opacity: 0;
      }
 }
 
-@keyframes swipeRight {
+@keyframes swipeBottomRight {
      0% {
-          transform: translateX(0) rotate(0deg);
+          transform: translate(0, 0) rotate(0deg);
           opacity: 1;
      }
 
      100% {
-          transform: translateX(100%) rotate(20deg);
+          transform: translate(80%, 80%) rotate(30deg);
+          /* Двигается вниз-вправо */
           opacity: 0;
      }
 }
 
 .appear {
-     animation: appearCard 0.4s ease-in forwards;
+     animation: appearCardDiagonal 0.4s ease-in forwards;
 }
 
-@keyframes appearCard {
+@keyframes appearCardDiagonal {
      0% {
-          transform: translateX(0) rotate(0deg);
+          transform: translate(-20%, 20%) rotate(-10deg);
           opacity: 0;
      }
 
      100% {
-          transform: translateX(0) rotate(0deg);
+          transform: translate(0, 0) rotate(0deg);
           opacity: 1;
      }
 }
+@keyframes appearCardDiagonal {
+     0% {
+          transform: translate(-20%, 20%) rotate(-10deg);
+          opacity: 0;
+     }
+
+     100% {
+          transform: translate(0, 0) rotate(0deg);
+          opacity: 1;
+     }
+}
+
+
+
+
 
 .heart__txt__sli {
      position: absolute;
