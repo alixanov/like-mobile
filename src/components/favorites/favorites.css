@@ -8,7 +8,7 @@
 
 .heart__card {
      width: 320px;
-     height: 500px;
+     height: 450px;
      position: relative;
 }
 
@@ -92,7 +92,7 @@
 /* Стили кнопок */
 .btn-swip {
      position: absolute;
-     bottom: 100px;
+     bottom: 150px;
      display: flex;
      justify-content: space-between;
      width: 100%;
