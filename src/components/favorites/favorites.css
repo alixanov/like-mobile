@@ -19,6 +19,7 @@
      align-items: center;
      justify-content: center;
      position: relative;
+     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 .image-container img {
@@ -27,16 +28,15 @@
      object-fit: cover;
      border-radius: 15px;
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 /* Анимация свайпа */
-.swipe-like {
+.image-container.swipe-like {
      transform: translateX(100%) rotate(15deg);
      opacity: 0;
 }
 
-.swipe-dislike {
+.image-container.swipe-dislike {
      transform: translateX(-100%) rotate(-15deg);
      opacity: 0;
 }
@@ -51,10 +51,11 @@
      padding: 10px 20px;
      border-radius: 5px;
      animation: fadeOut 0.3s ease-in-out;
+     z-index: 10;
 }
 
 .swipe-text.like {
-     color: #4caf50;
+     color: #aa3fec;
      left: 50%;
      transform: translateX(-50%);
 }
@@ -124,51 +125,6 @@
 .btn__right:hover,
 .btn__left:hover {
      transform: scale(1.1);
-}
-
-/* Анимация исчезновения текста */
-@keyframes fadeOut {
-     0% {
-          opacity: 1;
-     }
-
-     100% {
-          opacity: 0;
-     }
-}
-
-/* Если анкеты закончились */
-.no-more {
-     font-size: 24px;
-     font-weight: bold;
-     color: #333;
-}
-
-/* Текст "Лайк" / "Дизлайк" */
-.swipe-text {
-     position: absolute;
-     top: 40%;
-     font-size: 24px;
-     font-weight: bold;
-     text-transform: uppercase;
-     padding: 10px 20px;
-     border-radius: 5px;
-     animation: fadeOut 0.3s ease-in-out;
-     z-index: 10;
-}
-
-.swipe-text.like {
-
-     color: #aa3fec;
-     left: 50%;
-     transform: translateX(-50%);
-  
-}
-
-.swipe-text.dislike {
-     color: #f44336;
-     left: 50%;
-     transform: translateX(-50%);
 }
 
 /* Анимация исчезновения текста */
