@@ -1,110 +1,82 @@
 .heart__container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: relative;
-     margin-top: 3%;
-}
-
-.heart__card {
-     position: relative;
-     width: 320px;
-     height: 500px;
-     perspective: 1000px;
-}
-
-.image-container {
      width: 100%;
-     height: 100%;
-     position: absolute;
-     transform-origin: center;
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
-     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+     height: 100vh;
+     /* Высота 100% окна для фиксации */
+     max-height: 90vh;
+     /* Ограничение максимальной высоты */
+     overflow: hidden;
+     /* Избегаем переполнения */
+     position: relative;
+     margin-top: -80px;
+}
+
+.heart__card {
+     width: 320px;
+     height: 450px;
+     position: relative;
+}
+
+/* Картинка */
+.image-container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+     border-radius: 18px;
 }
 
 .image-container img {
      width: 100%;
-     height: 100%;
+     height: 450px;
+     /* Фиксированная высота, чтобы избежать изменения */
      object-fit: cover;
      border-radius: 15px;
      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-     transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+     border-radius: 18px;
 }
 
-
-
-
-.transitioning-left {
-     animation: swipeLeftBottom 0.4s ease-out forwards;
-     /* Анимация для bottom-left */
+/* Анимация свайпа */
+.swipe-like {
+     transform: translateX(100%) rotate(15deg);
+     opacity: 0;
 }
 
-.transitioning-right {
-     animation: swipeBottomRight 0.4s ease-out forwards;
-     /* Анимация для bottom-right */
+.swipe-dislike {
+     transform: translateX(-100%) rotate(-15deg);
+     opacity: 0;
 }
 
-@keyframes swipeLeftBottom {
-     0% {
-          transform: translate(0, 0) rotate(0deg);
-          opacity: 1;
-     }
-
-     100% {
-          transform: translate(-80%, 80%) rotate(-30deg);
-          /* Двигается вниз-влево */
-          opacity: 0;
-     }
+/* Текст "Лайк" / "Дизлайк" */
+.swipe-text {
+     position: absolute;
+     top: 40%;
+     font-size: 24px;
+     font-weight: bold;
+     text-transform: uppercase;
+     padding: 10px 20px;
+     border-radius: 5px;
+     animation: fadeOut 0.3s ease-in-out;
 }
 
-@keyframes swipeBottomRight {
-     0% {
-          transform: translate(0, 0) rotate(0deg);
-          opacity: 1;
-     }
-
-     100% {
-          transform: translate(80%, 80%) rotate(30deg);
-          /* Двигается вниз-вправо */
-          opacity: 0;
-     }
+.swipe-text.like {
+     color: #4caf50;
+     left: 50%;
+     transform: translateX(-50%);
 }
 
-.appear {
-     animation: appearCardDiagonal 0.4s ease-in forwards;
+.swipe-text.dislike {
+     color: #f44336;
+     left: 50%;
+     transform: translateX(-50%);
 }
 
-@keyframes appearCardDiagonal {
-     0% {
-          transform: translate(-20%, 20%) rotate(-10deg);
-          opacity: 0;
-     }
-
-     100% {
-          transform: translate(0, 0) rotate(0deg);
-          opacity: 1;
-     }
-}
-
-@keyframes appearCardDiagonal {
-     0% {
-          transform: translate(-20%, 20%) rotate(-10deg);
-          opacity: 0;
-     }
-
-     100% {
-          transform: translate(0, 0) rotate(0deg);
-          opacity: 1;
-     }
-}
-
-
-
-
-
+/* Стили текста анкеты */
 .heart__txt__sli {
      position: absolute;
      bottom: 20px;
@@ -119,87 +91,94 @@
      left: 10px;
 }
 
-.heart__txt__sli>p {
-     color: white;
-     font-size: 33px;
+.heart__txt__sli p {
+     font-size: 24px;
+     font-weight: bold;
 }
 
-.heart__txt__sli>span {
-     color: white;
-     font-size: 22px;
+.heart__txt__sli span {
+     font-size: 18px;
 }
 
+/* Стили кнопок */
 .btn-swip {
      position: absolute;
-     bottom: -70px;
+     bottom: 10px;
+     /* Меньший отступ снизу, чтобы кнопки не влияли на структуру */
      display: flex;
      justify-content: space-between;
      width: 100%;
+     max-width: 300px;
+     z-index: 100;
+     /* Кнопки остаются над swiper */
+}
+
+.btn__right,
+.btn__left {
+     width: 60px;
+     height: 60px;
+     border: none;
+     cursor: pointer;
+     border-radius: 50%;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: transform 0.2s ease;
 }
 
 .btn__right {
-     width: 50px;
-     height: 50px;
      background: #aa3fec;
-     ;
-     border: none;
-     cursor: pointer;
-     transition: transform 0.2s ease;
-     border-radius: 50%;
-     color: white;
-}
-
-.btn__right:hover {
-     transform: scale(1.1);
 }
 
 .btn__left {
-     width: 50px;
-     height: 50px;
      background: red;
-     ;
-     border: none;
-     cursor: pointer;
-     transition: transform 0.2s ease;
-     border-radius: 50%;
-     color: white;
 }
 
+.btn__right:hover,
 .btn__left:hover {
      transform: scale(1.1);
 }
 
-.button-overlay {
-     position: absolute;
-     top: 47%;
-     left: 35%;
-     transform: translate(-50%, -50%);
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background: rgba(255, 255, 255, 0.3);
-     border-radius: 50%;
-     width: 60px;
-     height: 60px;
-     animation: fadeOut 0.5s ease-out forwards;
-}
-
-.button-overlay.heart {
-     color: #aa3fec;
-}
-
-.button-overlay.cross {
-     color: #ff3333;
-}
-
+/* Анимация исчезновения текста */
 @keyframes fadeOut {
      0% {
           opacity: 1;
-          transform: scale(1);
      }
 
      100% {
           opacity: 0;
-          transform: scale(1.5);
      }
+}
+
+/* Если анкеты закончились */
+.no-more {
+     font-size: 24px;
+     font-weight: bold;
+     color: #333;
+}
+
+/* Текст "Лайк" / "Дизлайк" */
+.swipe-text {
+     position: absolute;
+     top: 40%;
+     font-size: 24px;
+     font-weight: bold;
+     text-transform: uppercase;
+     padding: 10px 20px;
+     border-radius: 5px;
+     animation: fadeOut 0.3s ease-in-out;
+     z-index: 10;
+}
+
+.swipe-text.like {
+     color: #aa3fec;
+     left: 50%;
+     transform: translateX(-50%);
+}
+
+.swipe-text.dislike {
+     color: #f44336;
+     left: 50%;
+     transform: translateX(-50%);
 }
